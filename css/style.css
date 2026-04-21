@@ -20,7 +20,7 @@
   --accent-dk:      #000000;
 
   /* Fonts */
-  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-display: 'Manrope', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   --f-body:    'Manrope', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   --f-mono:    'Space Mono', 'SFMono-Regular', Menlo, monospace;
 
