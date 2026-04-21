@@ -1,28 +1,28 @@
 /* ===========================================================================
-   PORTFOLIO — Minimalist, typographic, restrained.
-   Typography: Manrope (geometric body) + Cormorant Garamond (editorial display).
-   Palette: white ground, black ink, no color accent — contrast and
-   whitespace do the work.
+   PORTFOLIO — Clean, geometric, Helvetica-inspired.
+   Typography: Inter (Helvetica-like geometric sans).
+   Palette: white ground, black ink.
+   Accents: abstract geometric shapes, pill/ellipse labels.
    =========================================================================== */
 
 :root {
   /* Palette — black, white, gray */
   --bg:             #FFFFFF;
-  --bg-alt:         #F5F5F5;
+  --bg-alt:         #F7F7F7;
   --bg-card:        #FFFFFF;
   --ink:            #000000;
   --ink-2:          #333333;
-  --ink-3:          #888888;
+  --ink-3:          #777777;
   --ink-4:          #BBBBBB;
-  --rule:           #E8E8E8;
-  --rule-strong:    #D0D0D0;
+  --rule:           #E5E5E5;
+  --rule-strong:    #CCCCCC;
   --accent:         #000000;
   --accent-dk:      #000000;
 
   /* Fonts */
-  --f-display: 'Manrope', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  --f-body:    'Manrope', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  --f-mono:    'Space Mono', 'SFMono-Regular', Menlo, monospace;
+  --f-display: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --f-body:    'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --f-mono:    'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --max: 1280px;
   --gutter: clamp(1.5rem, 5vw, 4rem);
@@ -40,13 +40,59 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-feature-settings: normal;
 }
 
 ::selection { background: var(--ink); color: var(--bg); }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
+
+/* ---------- Pill / ellipse label mixin ---------- */
+.pill-label {
+  display: inline-block;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.3em 0.9em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ---------- Decorative geometric shapes ---------- */
+.geo {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.08;
+  z-index: 0;
+}
+.geo-1 {
+  top: 8%;
+  right: 8%;
+}
+.geo-2 {
+  bottom: 18%;
+  right: 15%;
+}
+.geo-3 {
+  top: 35%;
+  left: 3%;
+}
+.geo-4 {
+  bottom: 30%;
+  left: 12%;
+}
+
+.geo-divider {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  opacity: 0.1;
+}
 
 /* ---------- Top navigation ---------- */
 .topnav {
@@ -72,14 +118,11 @@ a { color: inherit; }
 
 .nav-brand {
   font-family: var(--f-display);
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   text-decoration: none;
   color: var(--ink);
-}
-.nav-brand em {
-  font-style: normal;
 }
 
 .nav-links {
@@ -87,17 +130,25 @@ a { color: inherit; }
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 2rem;
-  font-size: 13px;
-  font-weight: 450;
-  letter-spacing: 0.005em;
+  gap: 0.75rem;
 }
-.nav-links a {
+.nav-links li a {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   text-decoration: none;
   color: var(--ink-3);
-  transition: color 0.2s ease;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35em 0.85em;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
-.nav-links a:hover { color: var(--ink); }
+.nav-links li a:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
 
 /* ---------- Section layout ---------- */
 section {
@@ -111,22 +162,19 @@ section {
 
 .section-label {
   display: inline-block;
-  font-family: var(--f-mono);
-  font-size: 11px;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   color: var(--ink-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.35em 1em;
   margin-bottom: 2rem;
 }
 .section-label::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--ink-3);
-  vertical-align: middle;
-  margin-right: 0.75rem;
-  transform: translateY(-2px);
+  display: none;
 }
 
 .section-title {
@@ -160,24 +208,30 @@ section {
   padding-top: 6rem;
   padding-bottom: 4rem;
   position: relative;
+  overflow: hidden;
 }
 .hero-inner {
   position: relative;
   width: 100%;
   max-width: var(--max);
   margin: 0 auto;
+  z-index: 1;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: var(--f-mono);
-  font-size: 11px;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   color: var(--ink-3);
   margin: 0 0 2rem 0;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.4em 1em;
 }
 .eyebrow .dot {
   width: 6px;
@@ -217,10 +271,10 @@ section {
 
 .hero-role {
   font-family: var(--f-body);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   margin: 0;
   color: var(--ink-2);
 }
@@ -246,14 +300,20 @@ section {
 .hero-meta-bottom > div {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.4rem;
 }
 .hero-meta-bottom .lbl {
-  font-family: var(--f-mono);
-  font-size: 10.5px;
+  display: inline-block;
+  font-family: var(--f-body);
+  font-size: 9.5px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--ink-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.2em 0.7em;
+  width: fit-content;
 }
 .hero-meta-bottom .val {
   color: var(--ink);
@@ -271,10 +331,11 @@ section {
   gap: 0.75rem;
   text-decoration: none;
   color: var(--ink-3);
-  font-family: var(--f-mono);
+  font-family: var(--f-body);
   font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.1em;
   transition: color 0.2s;
 }
 .hero-scroll:hover { color: var(--ink); }
@@ -323,10 +384,11 @@ section {
 }
 .about-portrait-caption {
   margin-top: 0.875rem;
-  font-family: var(--f-mono);
-  font-size: 10.5px;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--ink-3);
   display: flex;
   justify-content: space-between;
@@ -370,11 +432,17 @@ section {
   gap: 0.5rem;
 }
 .expertise-label {
-  font-family: var(--f-mono);
-  font-size: 10.5px;
+  display: inline-block;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--ink-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.25em 0.75em;
+  width: fit-content;
 }
 .expertise-list {
   font-size: 14.5px;
@@ -397,14 +465,16 @@ section {
 
 .category-count {
   justify-self: end;
-  font-family: var(--f-mono);
-  font-size: 11px;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--ink-3);
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--rule);
-  min-width: 120px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.35em 1em;
+  height: fit-content;
 }
 
 .project-grid {
@@ -460,17 +530,23 @@ section {
 }
 
 .card-tag {
-  font-family: var(--f-mono);
-  font-size: 10.5px;
+  display: inline-block;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   color: var(--ink-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.25em 0.75em;
+  width: fit-content;
 }
 
 .card-title {
   font-family: var(--f-display);
-  font-weight: 400;
-  font-size: 1.375rem;
+  font-weight: 500;
+  font-size: 1.3rem;
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin: 0;
@@ -564,15 +640,16 @@ section {
 .contact-card-label {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
   min-width: 0;
 }
 .contact-card-type {
-  font-family: var(--f-mono);
-  font-size: 10px;
+  font-family: var(--f-body);
+  font-size: 9px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  opacity: 0.65;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
 }
 .contact-card-value {
   font-family: var(--f-body);
@@ -596,10 +673,11 @@ section {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  font-family: var(--f-mono);
-  font-size: 10.5px;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   color: var(--ink-3);
 }
 
@@ -676,16 +754,20 @@ section {
 
 .modal-tag {
   display: inline-block;
-  font-family: var(--f-mono);
-  font-size: 11px;
+  font-family: var(--f-body);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--ink-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.3em 0.9em;
   margin-bottom: 1rem;
 }
 .modal-title {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(1.75rem, 3.2vw, 2.5rem);
   line-height: 1.08;
   letter-spacing: -0.025em;
@@ -711,14 +793,20 @@ section {
 .modal-meta .meta-item {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 .modal-meta .meta-label {
-  font-family: var(--f-mono);
-  font-size: 10px;
+  display: inline-block;
+  font-family: var(--f-body);
+  font-size: 9px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--ink-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.2em 0.6em;
+  width: fit-content;
 }
 .modal-meta .meta-value {
   font-family: var(--f-body);
@@ -810,15 +898,18 @@ section {
   .category-header { grid-template-columns: 1fr; gap: 1.5rem; }
   .category-count { justify-self: start; }
   .hero-meta-bottom { gap: 1.5rem; }
+  .geo { display: none; }
 }
 
 @media (max-width: 640px) {
   body { font-size: 15.5px; }
-  .nav-links { gap: 1.25rem; font-size: 12px; }
+  .nav-links { gap: 0.5rem; }
+  .nav-links li a { font-size: 10px; padding: 0.3em 0.6em; }
   .nav-links li:nth-child(4) { display: none; }
   .project-grid { grid-template-columns: 1fr; }
   .modal-meta { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer { flex-direction: column; }
   .hero-scroll { display: none; }
+  .geo-divider { display: none; }
 }
