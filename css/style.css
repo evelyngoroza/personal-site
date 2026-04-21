@@ -1,6 +1,6 @@
 /* ===========================================================================
    PORTFOLIO — Minimalist, typographic, restrained.
-   Typography: Geist (primary) + Fraunces (sparse editorial accents).
+   Typography: Manrope (geometric body) + Cormorant Garamond (editorial display).
    Palette: white ground, black ink, no color accent — contrast and
    whitespace do the work.
    =========================================================================== */
@@ -20,9 +20,9 @@
   --accent-dk:      #000000;
 
   /* Fonts */
-  --f-display: 'Fraunces', Georgia, serif;
-  --f-body:    'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  --f-mono:    'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-body:    'Manrope', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --f-mono:    'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
 
   --max: 1280px;
   --gutter: clamp(1.5rem, 5vw, 4rem);
@@ -40,7 +40,7 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "ss01";
+  font-feature-settings: normal;
 }
 
 ::selection { background: var(--ink); color: var(--bg); }
@@ -140,13 +140,11 @@ section {
   line-height: 1.02;
   letter-spacing: -0.035em;
   margin: 0 0 1.5rem 0;
-  font-variation-settings: "opsz" 144, "SOFT" 0;
   color: var(--ink);
 }
 .section-title em {
   font-style: italic;
   color: var(--ink-3);
-  font-variation-settings: "opsz" 144, "SOFT" 100;
 }
 
 .section-intro {
@@ -204,7 +202,6 @@ section {
   line-height: 0.92;
   letter-spacing: -0.045em;
   margin: 0 0 2.5rem 0;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
   color: var(--ink);
 }
 .hero-title .line-1 { display: block; }
@@ -212,7 +209,6 @@ section {
   display: block;
   font-style: italic;
   color: var(--ink-3);
-  font-variation-settings: "opsz" 144, "SOFT" 100;
 }
 
 .hero-meta {
@@ -351,12 +347,10 @@ section {
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0 0 2rem 0;
-  font-variation-settings: "opsz" 48, "SOFT" 0;
 }
 .about-lede em {
   font-style: italic;
   color: var(--ink-3);
-  font-variation-settings: "opsz" 48, "SOFT" 100;
 }
 
 .about-bio p {
@@ -486,7 +480,6 @@ section {
   letter-spacing: -0.02em;
   margin: 0;
   color: var(--ink);
-  font-variation-settings: "opsz" 36;
 }
 
 .card-desc {
@@ -525,13 +518,11 @@ section {
   line-height: 0.95;
   letter-spacing: -0.04em;
   margin: 1rem 0 1.5rem;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
   color: var(--ink);
 }
 .contact-title em {
   font-style: italic;
   color: var(--ink-3);
-  font-variation-settings: "opsz" 144, "SOFT" 100;
 }
 .contact-lede {
   max-width: 50ch;
@@ -704,7 +695,6 @@ section {
   line-height: 1.08;
   letter-spacing: -0.025em;
   margin: 0 0 1.25rem 0;
-  font-variation-settings: "opsz" 72;
 }
 .modal-lede {
   font-size: 1.0625rem;
@@ -750,7 +740,6 @@ section {
   letter-spacing: -0.01em;
   margin: 2rem 0 0.75rem 0;
   color: var(--ink);
-  font-variation-settings: "opsz" 24;
 }
 .modal-body p {
   font-size: 15px;
