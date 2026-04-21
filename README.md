@@ -66,22 +66,14 @@ You can also just double-click `index.html`, but fonts and PDFs may behave more 
 
 If you want a custom domain (e.g. `evelyngoroza.com`), GitHub Pages supports it in **Settings → Pages → Custom domain**.
 
-### Option 2 — Netlify (fastest, drag-and-drop)
-
-1. Sign up at https://app.netlify.com.
-2. On the dashboard, drag the entire `portfolio` folder into the drop zone.
-3. Netlify gives you a live URL immediately (e.g. `https://lucky-rose-1234.netlify.app`).
-4. You can rename the site or add a custom domain under **Site settings → Domain management**.
-
-Netlify also supports a GitHub workflow: connect a repo and any push to `main` redeploys the site automatically.
-
-### Option 3 — Vercel
+### Option 2 — Vercel
 
 1. Sign up at https://vercel.com with your GitHub account.
 2. Click **New Project**, import the GitHub repo containing this folder.
-3. Vercel auto-detects the static site and deploys it.
+3. Vercel auto-detects the static site and deploys it (e.g. `https://your-project.vercel.app`).
+4. You can add a custom domain under **Project Settings → Domains**.
 
-Same deal: push to main, auto-deploy.
+Push to `main` and Vercel auto-deploys.
 
 ---
 
