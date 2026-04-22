@@ -1,8 +1,7 @@
 /* ===========================================================================
    Portfolio interactions
    - Project modal open/close with data-driven content
-   - Scroll-reveal animations
-   - Smooth keyboard accessibility
+   - Keyboard accessibility
    =========================================================================== */
 
 // --------------------------- Project data -------------------------------------
@@ -440,28 +439,6 @@ modal.addEventListener("click", e => {
 
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
-});
-
-// --------------------------- Scroll-reveal ------------------------------------
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("in");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
-
-document.querySelectorAll(".section-head, .about-grid, .project-card, .contact-inner").forEach(el => {
-  el.classList.add("reveal");
-  observer.observe(el);
-});
-
-// Stagger reveals of cards within each grid
-document.querySelectorAll(".project-grid").forEach(grid => {
-  grid.querySelectorAll(".project-card").forEach((card, i) => {
-    card.style.transitionDelay = `${Math.min(i * 80, 400)}ms`;
-  });
 });
 
 // --------------------------- Top nav scroll state -----------------------------
