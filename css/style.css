@@ -15,7 +15,7 @@
 
   --max: 1120px;
   --gutter: clamp(1.5rem, 5vw, 4rem);
-  --section-gap: clamp(6rem, 12vw, 10rem);
+  --section-gap: clamp(4rem, 8vw, 6rem);
 }
 
 /* ---------- Reset ---------- */
@@ -94,7 +94,7 @@ section {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .section-title {
@@ -116,40 +116,18 @@ section {
 
 /* ---------- Hero ---------- */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 6rem;
-  padding-bottom: 4rem;
-}
-.hero-inner {
-  width: 100%;
-  max-width: var(--max);
-  margin: 0 auto;
-  position: relative;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
 }
 
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
+  display: block;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink);
-  margin-bottom: 2.5rem;
-}
-.eyebrow .dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--ink);
-  animation: pulse 2.4s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(0.6); }
+  margin-bottom: 1.5rem;
 }
 
 .hero-title {
@@ -157,7 +135,7 @@ section {
   font-size: clamp(2.5rem, 7vw, 5.5rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   color: var(--ink);
 }
 .hero-title .line-1,
@@ -165,7 +143,6 @@ section {
 
 .hero-meta {
   max-width: 40rem;
-  padding-top: 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -190,7 +167,7 @@ section {
 .hero-meta-bottom {
   display: flex;
   gap: 3rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
 }
 .hero-meta-bottom > div {
@@ -211,30 +188,9 @@ section {
   color: var(--ink);
 }
 
-.hero-scroll {
-  position: absolute;
-  bottom: 2rem;
-  right: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--ink);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  transition: letter-spacing 0.2s;
-}
-.hero-scroll:hover { letter-spacing: 0.2em; }
-.hero-scroll .line {
-  width: 40px;
-  height: 1px;
-  background: var(--ink);
-}
 
 /* ---------- About ---------- */
-.section-head { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.section-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
 
 .about-layout {
   display: grid;
@@ -313,7 +269,7 @@ section {
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .category-count {
@@ -716,5 +672,4 @@ section {
   .contact-card + .contact-card { border-left: none; }
   .contact-card:nth-child(n+2) { border-top: 1px solid var(--ink); }
   .footer { flex-direction: column; }
-  .hero-scroll { display: none; }
 }
