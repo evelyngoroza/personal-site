@@ -2,8 +2,9 @@
    PORTFOLIO — Swiss / International Typographic Style
    ·  Inter — one typeface, hierarchy through weight and size only
    ·  Pure black and white — no grey, no opacity fading
-   ·  Whitespace is the primary structural device
+   ·  Horizontal rules as primary structural device
    ·  Labels: small, bold, uppercase, black — hierarchy by size, not color
+   ·  Static, confident presentation — no decorative animation
    =========================================================================== */
 
 :root {
@@ -15,7 +16,7 @@
 
   --max: 1120px;
   --gutter: clamp(1.5rem, 5vw, 4rem);
-  --section-gap: clamp(4rem, 8vw, 6rem);
+  --section-gap: clamp(5rem, 10vw, 8rem);
 }
 
 /* ---------- Reset ---------- */
@@ -51,6 +52,7 @@ a { color: inherit; }
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--ink);
 }
 
 .nav-brand {
@@ -75,15 +77,17 @@ a { color: inherit; }
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink);
-  transition: font-weight 0.1s;
 }
-.nav-links a:hover { font-weight: 600; }
+.nav-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- Shared section structure ---------- */
 section {
   padding: var(--section-gap) var(--gutter);
   max-width: var(--max);
   margin: 0 auto;
+}
+section + section {
+  border-top: 1px solid var(--ink);
 }
 
 /* Section labels — small, bold, fully black */
@@ -99,9 +103,9 @@ section {
 
 .section-title {
   font-weight: 700;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
   color: var(--ink);
 }
@@ -116,8 +120,9 @@ section {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding-top: 7rem;
-  padding-bottom: 2rem;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+  border-top: none;
 }
 
 .eyebrow {
@@ -132,10 +137,10 @@ section {
 
 .hero-title {
   font-weight: 700;
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  margin-bottom: 2rem;
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  margin-bottom: 2.5rem;
   color: var(--ink);
 }
 .hero-title .line-1,
@@ -167,7 +172,9 @@ section {
 .hero-meta-bottom {
   display: flex;
   gap: 3rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink);
   flex-wrap: wrap;
 }
 .hero-meta-bottom > div {
@@ -240,6 +247,8 @@ section {
 
 .about-expertise {
   margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ink);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.75rem;
@@ -285,13 +294,13 @@ section {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 /* ---------- Project cards ---------- */
 .project-card {
   background: var(--bg);
-  border: 1px solid var(--ink);
+  border-top: 2px solid var(--ink);
   overflow: hidden;
   cursor: pointer;
   display: flex;
@@ -305,7 +314,6 @@ section {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--bg-alt);
-  border-bottom: 1px solid var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,7 +326,7 @@ section {
 }
 
 .card-body {
-  padding: 1.25rem;
+  padding: 1rem 0 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -451,6 +459,8 @@ section {
 
 .footer {
   margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -474,11 +484,6 @@ section {
 }
 .modal[aria-hidden="false"] {
   display: flex;
-  animation: fadeIn 0.2s ease;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 .modal-backdrop {
   position: absolute;
@@ -497,11 +502,6 @@ section {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  animation: slideUp 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-@keyframes slideUp {
-  from { transform: translateY(12px); opacity: 0; }
-  to   { transform: translateY(0); opacity: 1; }
 }
 
 .modal-close {
@@ -562,6 +562,8 @@ section {
   gap: 1.25rem;
   padding: 1.5rem 0;
   margin-bottom: 2rem;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
 }
 .modal-meta .meta-item {
   display: flex;
@@ -621,6 +623,7 @@ section {
   gap: 0.5rem;
   padding-top: 2rem;
   margin-top: 2rem;
+  border-top: 1px solid var(--ink);
 }
 .btn {
   display: inline-flex;
@@ -643,14 +646,14 @@ section {
 .btn.primary:hover { background: #1A1A1A; }
 
 /* ---------- Scroll-triggered reveals ---------- */
+/* Swiss design: static, confident, immediate — no decorative animation */
 .reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1;
+  transform: none;
 }
 .reveal.in {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* ---------- Responsive ---------- */
