@@ -98,7 +98,7 @@ section {
 }
 
 .section-title {
-  font-weight: 300;
+  font-weight: 700;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -153,7 +153,7 @@ section {
 }
 
 .hero-title {
-  font-weight: 300;
+  font-weight: 700;
   font-size: clamp(2.5rem, 7vw, 5.5rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -182,7 +182,7 @@ section {
 .hero-tagline {
   font-size: clamp(1rem, 1.4vw, 1.125rem);
   line-height: 1.5;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   max-width: 40ch;
 }
@@ -207,7 +207,7 @@ section {
 }
 .hero-meta-bottom .val {
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
 }
 
@@ -264,7 +264,7 @@ section {
 .about-content { max-width: 56ch; }
 
 .about-lede {
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(1.125rem, 1.8vw, 1.3125rem);
   line-height: 1.45;
   letter-spacing: -0.01em;
@@ -276,7 +276,7 @@ section {
 .about-bio p {
   font-size: 0.9375rem;
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   margin-bottom: 1rem;
 }
@@ -303,7 +303,7 @@ section {
 .expertise-list {
   font-size: 13.5px;
   line-height: 1.55;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
 }
 
@@ -388,7 +388,7 @@ section {
 .card-desc {
   font-size: 13.5px;
   line-height: 1.55;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   margin: 0 0 auto;
 }
@@ -413,7 +413,7 @@ section {
 .contact-inner { padding-bottom: 2rem; }
 
 .contact-title {
-  font-weight: 300;
+  font-weight: 700;
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -426,7 +426,7 @@ section {
   max-width: 48ch;
   font-size: 0.9375rem;
   line-height: 1.65;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   margin-bottom: 2.5rem;
 }
@@ -482,7 +482,7 @@ section {
 }
 .contact-card-value {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -584,7 +584,7 @@ section {
   margin-bottom: 1rem;
 }
 .modal-title {
-  font-weight: 300;
+  font-weight: 700;
   font-size: clamp(1.5rem, 2.8vw, 2rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -594,7 +594,7 @@ section {
 .modal-lede {
   font-size: 0.9375rem;
   line-height: 1.6;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   margin-bottom: 2rem;
   max-width: 54ch;
@@ -622,7 +622,7 @@ section {
 .modal-meta .meta-value {
   font-size: 13.5px;
   line-height: 1.4;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
 }
 
@@ -637,7 +637,7 @@ section {
 .modal-body p {
   font-size: 14px;
   line-height: 1.65;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   margin-bottom: 0.75rem;
   max-width: 58ch;
