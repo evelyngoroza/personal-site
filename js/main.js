@@ -386,7 +386,7 @@ const PROJECTS = {
         p: "The paper examines Lululemon's consumer strategy through psychological frameworks, analyzing how the brand leverages experiential retail design, sensory environments, workforce-driven brand identity, and quality perception to cultivate deep consumer loyalty in the athletic apparel market."
       }
     ],
-    gallery: [],
+    gallery: ["assets/images/design_consumer_psych.jpg"],
     actions: [
       { label: "Read paper", href: "assets/pdfs/Consumer Psych.pdf", primary: true }
     ]
