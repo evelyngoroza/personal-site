@@ -368,6 +368,28 @@ const PROJECTS = {
     actions: [
       { label: "View full deck", href: "assets/pdfs/Eazy_Daize.pdf", primary: true }
     ]
+  },
+
+  "consumer-psych": {
+    tag: "Consumer Psychology",
+    title: "Consumer Psychology of Lululemon",
+    lede: "An analysis of Lululemon's brand strategy through the lens of consumer psychology, examining how retail design, brand identity, workforce culture, and community engagement shape consumer behavior and loyalty.",
+    meta: [
+      { label: "Topic", value: "Brand & consumer psychology" },
+      { label: "Case Study", value: "Lululemon Athletica" },
+      { label: "Lens", value: "Retail experience, identity, community" },
+      { label: "Format", value: "Research paper" }
+    ],
+    sections: [
+      {
+        h: "Overview",
+        p: "The paper examines Lululemon's consumer strategy through psychological frameworks, analyzing how the brand leverages experiential retail design, sensory environments, workforce-driven brand identity, and quality perception to cultivate deep consumer loyalty in the athletic apparel market."
+      }
+    ],
+    gallery: [],
+    actions: [
+      { label: "Read paper", href: "assets/pdfs/Consumer Psych.pdf", primary: true }
+    ]
   }
 };
 
