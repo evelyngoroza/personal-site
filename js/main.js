@@ -388,7 +388,7 @@ const PROJECTS = {
     ],
     gallery: ["assets/images/design_consumer_psych.jpg"],
     actions: [
-      { label: "Read paper", href: "assets/pdfs/Consumer Psych.pdf", primary: true }
+      { label: "Read paper", href: "assets/pdfs/Consumer_Psych.pdf", primary: true }
     ]
   }
 };
