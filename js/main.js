@@ -9,7 +9,7 @@
 const PROJECTS = {
   "thesis-proquest": {
     tag: "Master's Thesis · Tufts University · 2025",
-    title: "Quantifying Calibration: Bridging Trust and Reliance in Automation",
+    title: "Quantifying Calibration: Bridging Trust and Reliance in Automation Across Cultural Values and Dispositional Factors",
     lede: "An empirical investigation of how cultural values and dispositional traits (personality) shape trust, reliance, and calibrated use of collaborative automation systems, with an exploratory framework for quantifying calibration over time.",
     meta: [
       { label: "Degree", value: "M.S. Human Factors Engineering" },
@@ -83,6 +83,7 @@ const PROJECTS = {
       { label: "Date", value: "August 2025" },
       { label: "Advisor", value: "Dr. Dave B. Miller" },
       { label: "Committee", value: "Dr. Daniel J. Hannon, Dr. Holly Taylor" },
+      { label: "Funding", value: "Wittich Grant, Trefethen Fellowship" },
       { label: "Outcome", value: "Passed" }
     ],
     sections: [
@@ -148,7 +149,7 @@ const PROJECTS = {
     lede: "The third-iteration Figma prototype of the ORBIT App interface, refining Mission and Sandbox modes based on teacher feedback and student pilot observations from the previous version.",
     meta: [
       { label: "Tool", value: "Figma" },
-      { label: "Role", value: "Interface designer" },
+      { label: "Role", value: "UX Designer + Researcher" },
       { label: "Pages", value: "Mission + Sandbox modes" },
       { label: "Status", value: "Piloted in classrooms" }
     ],
@@ -176,8 +177,8 @@ const PROJECTS = {
     lede: "The second-iteration prototype, following the original low-fidelity paper prototype. Establishes the three-panel structure (Steps Menu, Coding Track, Command Panel) that persists through later iterations.",
     meta: [
       { label: "Tool", value: "Figma" },
-      { label: "Basis", value: "Paper prototype from co-design workshop" },
-      { label: "Role", value: "Interface designer" },
+      { label: "Basis", value: "Co-design workshop prototype" },
+      { label: "Role", value: "UX Designer + Researcher" },
       { label: "Outcome", value: "Fed into teacher testing workshop" }
     ],
     sections: [
@@ -202,7 +203,7 @@ const PROJECTS = {
     title: "Structured Observation Poster",
     lede: "Research poster presenting the methodology and theoretical grounding for a structured classroom observation instrument designed to evaluate the ORBIT App with autistic middle school students.",
     meta: [
-      { label: "Course", value: "Independent Study" },
+      { label: "Advisor", value: "Dr. Trevion Henderson, with David Zabner (PhD candidate)" },
       { label: "Framework", value: "Social constructivism" },
       { label: "Method", value: "Critical incident technique" },
       { label: "Design", value: "Conjecture mapping (Sandoval 2014)" }
@@ -226,7 +227,7 @@ const PROJECTS = {
     lede: "A research instrument for capturing rich field data during ORBIT classroom sessions and baseline robotics observations, grounded in the critical incident technique and designed to support thematic analysis.",
     meta: [
       { label: "Released", value: "December 2024" },
-      { label: "Method", value: "Critical incident technique" },
+      { label: "Advisor", value: "Dr. Trevion Henderson, with David Zabner (PhD candidate)" },
       { label: "Setting", value: "Middle school classroom" },
       { label: "Population", value: "Autistic students (A.I.M.)" }
     ],
@@ -465,11 +466,91 @@ document.querySelectorAll(".project-card").forEach(card => {
 });
 
 modal.addEventListener("click", e => {
-  if (e.target.dataset && e.target.hasAttribute("data-close")) closeModal();
+  if (e.target.closest("[data-close]")) closeModal();
 });
 
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
+});
+
+// --------------------------- Image lightbox ----------------------------------
+const lightbox = document.createElement("div");
+lightbox.className = "lightbox";
+lightbox.setAttribute("aria-hidden", "true");
+lightbox.innerHTML = `
+  <div class="lightbox-backdrop"></div>
+  <img class="lightbox-img" src="" alt="" />
+  <button class="lightbox-close" aria-label="Close">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+      <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <button class="lightbox-prev" aria-label="Previous image">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+      <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <button class="lightbox-next" aria-label="Next image">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+      <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+`;
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector(".lightbox-img");
+let lightboxSrcs = [];
+let lightboxIndex = 0;
+
+function openLightbox(src, srcs) {
+  lightboxSrcs = srcs || [src];
+  lightboxIndex = lightboxSrcs.indexOf(src);
+  if (lightboxIndex === -1) lightboxIndex = 0;
+  lightboxImg.src = lightboxSrcs[lightboxIndex];
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  updateLightboxNav();
+}
+
+function closeLightbox() {
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+  if (modal.getAttribute("aria-hidden") === "false") {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+}
+
+function updateLightboxNav() {
+  lightbox.querySelector(".lightbox-prev").style.display = lightboxSrcs.length > 1 ? "" : "none";
+  lightbox.querySelector(".lightbox-next").style.display = lightboxSrcs.length > 1 ? "" : "none";
+}
+
+function lightboxNav(dir) {
+  lightboxIndex = (lightboxIndex + dir + lightboxSrcs.length) % lightboxSrcs.length;
+  lightboxImg.src = lightboxSrcs[lightboxIndex];
+}
+
+lightbox.querySelector(".lightbox-backdrop").addEventListener("click", closeLightbox);
+lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+lightbox.querySelector(".lightbox-prev").addEventListener("click", () => lightboxNav(-1));
+lightbox.querySelector(".lightbox-next").addEventListener("click", () => lightboxNav(1));
+
+document.addEventListener("keydown", e => {
+  if (lightbox.getAttribute("aria-hidden") === "false") {
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") lightboxNav(-1);
+    if (e.key === "ArrowRight") lightboxNav(1);
+  }
+});
+
+// Delegate click on gallery images inside the modal
+modal.addEventListener("click", e => {
+  const img = e.target.closest(".modal-gallery img");
+  if (!img) return;
+  const allImgs = Array.from(modal.querySelectorAll(".modal-gallery img")).map(i => i.src);
+  openLightbox(img.src, allImgs);
 });
 
 // --------------------------- Scroll-reveal ------------------------------------
