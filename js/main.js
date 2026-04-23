@@ -246,7 +246,7 @@ const PROJECTS = {
   "sentinel": {
     tag: "Interface Design · Usability Study · 2024",
     title: "Sentinel: A Drowsy Driver Detection App",
-    lede: "72,000 crashes, 44,000 injuries, and 800 deaths every year from drowsy driving — yet the detection apps on the market are confusing and hard to trust. I designed Sentinel to fix that, then tested it head-to-head against a real competitor.",
+    lede: "72,000 crashes, 44,000 injuries, and 800 deaths every year from drowsy driving, yet the detection apps on the market are confusing and hard to trust. I designed Sentinel to fix that, then tested it head-to-head against a real competitor.",
     meta: [
       { label: "Problem", value: "Existing drowsy-driving apps lack trust and usability" },
       { label: "Methods", value: "Figma prototyping, comparative usability testing" },
@@ -260,7 +260,7 @@ const PROJECTS = {
       },
       {
         h: "Design approach",
-        p: "Three pillars guided every decision: <strong>safety</strong> — the interface had to look and feel reliable at a glance; <strong>simplicity</strong> — quick to navigate from a phone mount while driving; and <strong>accessibility</strong> — usable for people with sensory or perceptual differences. These weren't aspirational values — each one directly shaped layout, color, typography, and interaction patterns."
+        p: "Three pillars guided every decision. <strong>Safety</strong> meant the interface had to look and feel reliable at a glance. <strong>Simplicity</strong> meant quick to navigate from a phone mount while driving. <strong>Accessibility</strong> meant usable for people with sensory or perceptual differences. These weren't aspirational values; each one directly shaped layout, color, typography, and interaction patterns."
       },
       {
         h: "How I tested it",
@@ -268,7 +268,7 @@ const PROJECTS = {
       },
       {
         h: "What I found",
-        p: "Sentinel scored significantly higher on perceived interface competency and likelihood to recommend (both p &lt; 0.05). Ease of use was comparable. The study also surfaced two specific areas — recalibration and accessibility flows — that I'd prioritize in a next iteration."
+        p: "Sentinel scored significantly higher on perceived interface competency and likelihood to recommend (both p &lt; 0.05). Ease of use was comparable. The study also surfaced two areas I'd prioritize in a next iteration: recalibration and accessibility flows."
       }
     ],
     gallery: [
@@ -285,7 +285,7 @@ const PROJECTS = {
   "upaway": {
     tag: "Interactive Design",
     title: "Up & Away Airlines: Interactive Safety Briefing",
-    lede: "Most passengers tune out the safety briefing — it's passive, generic, and easy to ignore. I redesigned it as a self-paced, interactive seatback experience that passengers actually engage with.",
+    lede: "Most passengers tune out the safety briefing because it's passive, generic, and easy to ignore. I redesigned it as a self-paced, interactive seatback experience that passengers actually engage with.",
     meta: [
       { label: "Challenge", value: "Passengers ignore passive safety demos" },
       { label: "Solution", value: "Interactive, tap-through seatback experience" },
@@ -299,7 +299,7 @@ const PROJECTS = {
       },
       {
         h: "The design",
-        p: "Up &amp; Away breaks the briefing into five interactive segments — seatbelts, oxygen masks, life vests, brace positions, and exits. Each segment uses clear step-by-step illustrations with explicit confirmations before progressing. Passengers control the pace, which shifts the experience from passive watching to active learning."
+        p: "Up &amp; Away breaks the briefing into five interactive segments: seatbelts, oxygen masks, life vests, brace positions, and exits. Each segment uses clear step-by-step illustrations with explicit confirmations before progressing. Passengers control the pace, which shifts the experience from passive watching to active learning."
       }
     ],
     gallery: [
@@ -316,7 +316,7 @@ const PROJECTS = {
   "sec": {
     tag: "Environmental Design · User Research",
     title: "SEC Atrium Redesign",
-    lede: "A busy university atrium that tried to be everything — study hall, café, event space — and did none of them well. I spent weeks observing how people actually used the space, then designed two alternatives validated with a physical scale model.",
+    lede: "A busy university atrium that tried to serve as study hall, café, and event space all at once, and did none of them well. I spent weeks observing how people actually used the space, then designed two alternatives validated with a physical scale model.",
     meta: [
       { label: "Challenge", value: "Multi-use space failing its primary users" },
       { label: "Research", value: "Weeks of observation, stakeholder interviews" },
@@ -326,7 +326,7 @@ const PROJECTS = {
     sections: [
       {
         h: "What I observed",
-        p: "The SEC atrium is Tufts' main science and engineering entry point. After weeks of observation, a clear pattern emerged: the space was overwhelmingly used for independent study, but it was also expected to function as a meeting place, casual eatery, and event venue. These competing demands left no use case well-served — and the single biggest pain point was a lack of power outlets."
+        p: "The SEC atrium is Tufts' main science and engineering entry point. After weeks of observation, a clear pattern emerged: the space was overwhelmingly used for independent study, but it was also expected to function as a meeting place, casual eatery, and event venue. These competing demands left no use case well-served. The single biggest pain point was a lack of power outlets."
       },
       {
         h: "Research process",
@@ -351,7 +351,7 @@ const PROJECTS = {
   "eazydaize": {
     tag: "Industrial Design · Physical Prototyping",
     title: "Eazy Daize",
-    lede: "An end-to-end industrial design project where I let user research — not aesthetics — drive every decision, from form exploration to physical prototype.",
+    lede: "An end-to-end industrial design project where I let user research, not aesthetics, drive every decision from form exploration to physical prototype.",
     meta: [
       { label: "Scope", value: "Full design arc: research → prototype" },
       { label: "Research", value: "User interview, in-store observation" },
@@ -361,11 +361,11 @@ const PROJECTS = {
     sections: [
       {
         h: "Starting with the user, not the form",
-        p: "I conducted a detailed user interview and an in-store observation visit to understand the existing product category and the rituals around it. Three themes kept surfacing: process gratification (the experience of use matters as much as the result), maintenance ease, and temperature control. These became the design criteria — not a mood board."
+        p: "I conducted a detailed user interview and an in-store observation visit to understand the existing product category and the rituals around it. Three themes kept surfacing: process gratification (the experience of use matters as much as the result), maintenance ease, and temperature control. These became the design criteria, not a mood board."
       },
       {
         h: "From research to prototype",
-        p: "The full arc — problem framing, competitive analysis, ideation, and prototyping — was anchored to those three research themes at every stage. When a concept looked good but didn't address a real user need, I cut it. The final prototype is a physical object shaped entirely by how people actually use products like this, not by how they look on a shelf."
+        p: "Every stage of the process, from problem framing through competitive analysis, ideation, and prototyping, was anchored to those three research themes. When a concept looked good but didn't address a real user need, I cut it. The final prototype is a physical object shaped entirely by how people actually use products like this, not by how they look on a shelf."
       }
     ],
     gallery: [
