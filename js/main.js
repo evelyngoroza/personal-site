@@ -422,8 +422,18 @@ function openModal(projectId) {
     <p>${s.p}</p>
   `).join("");
 
+  const primaryAction = p.actions.find(a => a.primary);
   const galleryHtml = p.gallery && p.gallery.length
-    ? `<div class="modal-gallery">${p.gallery.map(src => `<img src="${src}" alt="" loading="lazy" />`).join("")}</div>`
+    ? `<div class="modal-gallery-wrap">
+        <div class="modal-gallery">${p.gallery.map(src => `<img src="${src}" alt="" loading="lazy" />`).join("")}</div>
+        <div class="modal-gallery-note">
+          <span class="gallery-note-text">Preview only. Selected pages shown.</span>
+          ${primaryAction ? `<a href="${primaryAction.href}" class="btn primary" target="_blank" rel="noopener">
+            ${primaryAction.label}
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </a>` : ""}
+        </div>
+      </div>`
     : "";
 
   const actionsHtml = p.actions.map(a => `
