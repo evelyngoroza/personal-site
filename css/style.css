@@ -630,10 +630,8 @@ section + section {
 }
 .modal-body strong { font-weight: 500; }
 
-.modal-gallery-wrap {
-  margin: 2rem 0;
-}
 .modal-gallery {
+  margin: 2rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.5rem;
@@ -645,23 +643,6 @@ section + section {
   object-fit: cover;
   object-position: top;
   cursor: zoom-in;
-}
-.modal-gallery-note {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--ink);
-  flex-wrap: wrap;
-}
-.gallery-note-text {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink);
 }
 
 .modal-actions {
