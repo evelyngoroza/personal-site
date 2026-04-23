@@ -78,11 +78,11 @@ const PROJECTS = {
   "thesis-defense": {
     tag: "Thesis Defense · August 2025",
     title: "Thesis Defense Slide Deck",
-    lede: "The visual companion to the oral defense of <em>Quantifying Calibration</em>. Walks through motivation, literature framing, study design, findings, and implications for collaborative automation.",
+    lede: "The visual companion to the oral defense of <em>Quantifying Calibration</em>, presented for the Master of Science in Human Factors Engineering in the Department of Mechanical Engineering at Tufts University. Walks through motivation, literature framing, study design, findings, and implications for collaborative automation.",
     meta: [
       { label: "Date", value: "August 2025" },
-      { label: "Committee", value: "Miller (adv.), Hannon, Taylor" },
-      { label: "Institution", value: "Tufts University" },
+      { label: "Advisor", value: "Dr. Dave B. Miller" },
+      { label: "Committee", value: "Dr. Daniel J. Hannon, Dr. Holly Taylor" },
       { label: "Outcome", value: "Passed" }
     ],
     sections: [
