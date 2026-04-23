@@ -409,6 +409,7 @@ const modalContent = document.getElementById("modalContent");
 function openModal(projectId) {
   const p = PROJECTS[projectId];
   if (!p) return;
+  currentProjectId = projectId;
 
   const metaHtml = p.meta.map(m => `
     <div class="meta-item">
@@ -480,6 +481,13 @@ lightbox.setAttribute("aria-hidden", "true");
 lightbox.innerHTML = `
   <div class="lightbox-backdrop"></div>
   <img class="lightbox-img" src="" alt="" />
+  <div class="lightbox-bar">
+    <span class="lightbox-bar-text">Preview only. Selected pages shown.</span>
+    <a class="lightbox-bar-btn" href="" target="_blank" rel="noopener">
+      View full document
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </a>
+  </div>
   <button class="lightbox-close" aria-label="Close">
     <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
       <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
@@ -499,8 +507,10 @@ lightbox.innerHTML = `
 document.body.appendChild(lightbox);
 
 const lightboxImg = lightbox.querySelector(".lightbox-img");
+const lightboxBarBtn = lightbox.querySelector(".lightbox-bar-btn");
 let lightboxSrcs = [];
 let lightboxIndex = 0;
+let currentProjectId = null;
 
 function openLightbox(src, srcs) {
   lightboxSrcs = srcs || [src];
@@ -510,6 +520,17 @@ function openLightbox(src, srcs) {
   lightbox.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
   updateLightboxNav();
+  // Update the bar button to link to the primary action
+  if (currentProjectId && PROJECTS[currentProjectId]) {
+    const primary = PROJECTS[currentProjectId].actions.find(a => a.primary);
+    if (primary) {
+      lightboxBarBtn.href = primary.href;
+      lightboxBarBtn.textContent = primary.label;
+      lightboxBarBtn.style.display = "";
+    } else {
+      lightboxBarBtn.style.display = "none";
+    }
+  }
 }
 
 function closeLightbox() {
