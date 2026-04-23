@@ -243,27 +243,31 @@ const PROJECTS = {
   },
 
   "sentinel": {
-    tag: "Behavioral Statistics ENP-164 · 2024",
+    tag: "Interface Design · Usability Study · 2024",
     title: "Sentinel: A Drowsy Driver Detection App",
-    lede: "An interface concept for a drowsy driver detection app. I prototyped Sentinel in Figma and evaluated it through a small-n usability study with comparative analysis against an existing market app (Keep Alert).",
+    lede: "72,000 crashes, 44,000 injuries, and 800 deaths every year from drowsy driving — yet the detection apps on the market are confusing and hard to trust. I designed Sentinel to fix that, then tested it head-to-head against a real competitor.",
     meta: [
-      { label: "Course", value: "ENP-164 Behavioral Statistics" },
-      { label: "Tool", value: "Figma + R" },
-      { label: "Users", value: "N = 3 (small-n analysis)" },
-      { label: "Problem", value: "72k crashes / 44k injuries / 800 deaths annually from drowsy driving" }
+      { label: "Problem", value: "Existing drowsy-driving apps lack trust and usability" },
+      { label: "Methods", value: "Figma prototyping, comparative usability testing" },
+      { label: "Participants", value: "N = 3 (small-n evaluation)" },
+      { label: "Tools", value: "Figma, R" }
     ],
     sections: [
       {
-        h: "Design pillars",
-        p: "Three design pillars anchored the work: <strong>safety</strong> (interface communicates trustworthiness and reliability through aesthetics and functionality), <strong>simplicity</strong> (a layout that is quick to navigate from a dashboard phone mount), and <strong>accessibility</strong> (features that make the app usable for users with sensory or perceptual differences)."
+        h: "The problem",
+        p: "Drowsy driving kills 800 people a year in the U.S. Apps like Keep Alert exist, but their interfaces don't communicate trustworthiness, they're hard to use from a dashboard mount, and they neglect accessibility. I set out to design something better."
       },
       {
-        h: "Evaluation",
-        p: "Participants completed five tasks spanning face positioning, alarm settings, privacy, face recalibration, and accessibility. I collected task completion, time on task, error count, ease score, and satisfaction score, then compared Sentinel with Keep Alert on the same tasks."
+        h: "Design approach",
+        p: "Three pillars guided every decision: <strong>safety</strong> — the interface had to look and feel reliable at a glance; <strong>simplicity</strong> — quick to navigate from a phone mount while driving; and <strong>accessibility</strong> — usable for people with sensory or perceptual differences. These weren't aspirational values — each one directly shaped layout, color, typography, and interaction patterns."
       },
       {
-        h: "Findings",
-        p: "Sentinel demonstrated statistically significant advantages in interface competency and in likelihood to recommend (both p &lt; 0.05) versus Keep Alert. Ease of use was similar. Recalibration and accessibility flows were identified as the next iteration's focus."
+        h: "How I tested it",
+        p: "I ran the same five tasks (face positioning, alarm settings, privacy controls, face recalibration, accessibility) on both Sentinel and Keep Alert, measuring task completion, time, errors, ease, and satisfaction."
+      },
+      {
+        h: "What I found",
+        p: "Sentinel scored significantly higher on perceived interface competency and likelihood to recommend (both p &lt; 0.05). Ease of use was comparable. The study also surfaced two specific areas — recalibration and accessibility flows — that I'd prioritize in a next iteration."
       }
     ],
     gallery: [
@@ -280,17 +284,21 @@ const PROJECTS = {
   "upaway": {
     tag: "Interactive Design",
     title: "Up & Away Airlines: Interactive Safety Briefing",
-    lede: "A reimagined interactive in-flight safety briefing for a fictional airline, Up &amp; Away. The design translates the standard pre-takeoff safety demonstration into a structured, tap-through experience an individual passenger can follow at their own pace.",
+    lede: "Most passengers tune out the safety briefing — it's passive, generic, and easy to ignore. I redesigned it as a self-paced, interactive seatback experience that passengers actually engage with.",
     meta: [
-      { label: "Type", value: "Interactive prototype" },
-      { label: "Flow", value: "Seatbelts · Oxygen · Life Vest · Brace · Exits" },
-      { label: "Audience", value: "Single passenger, seatback screen" },
+      { label: "Challenge", value: "Passengers ignore passive safety demos" },
+      { label: "Solution", value: "Interactive, tap-through seatback experience" },
+      { label: "Flow", value: "Seatbelts → Oxygen → Life Vest → Brace → Exits" },
       { label: "Tool", value: "Figma" }
     ],
     sections: [
       {
-        h: "Design intent",
-        p: "Standard cabin safety briefings are passive and often tuned out. The Up &amp; Away prototype makes the briefing interactive: passengers tap through each segment (oxygen masks, flotation devices, brace positions, exits) with clear step-by-step illustrations and explicit confirmations, ending with a brief acknowledgement."
+        h: "The insight",
+        p: "Standard cabin safety briefings fail because they're one-size-fits-all and require no engagement. Research shows passengers retain almost nothing. The design challenge: how do you make safety information something people <em>choose</em> to pay attention to?"
+      },
+      {
+        h: "The design",
+        p: "Up &amp; Away breaks the briefing into five interactive segments — seatbelts, oxygen masks, life vests, brace positions, and exits. Each segment uses clear step-by-step illustrations with explicit confirmations before progressing. Passengers control the pace, which shifts the experience from passive watching to active learning."
       }
     ],
     gallery: [
@@ -305,27 +313,27 @@ const PROJECTS = {
   },
 
   "sec": {
-    tag: "Environmental Design",
+    tag: "Environmental Design · User Research",
     title: "SEC Atrium Redesign",
-    lede: "A re-design of the atrium of Tufts' Science and Engineering Complex, grounded in structured stakeholder analysis and validated with a 1:30 laser-cut scale model exploring two alternative seating configurations.",
+    lede: "A busy university atrium that tried to be everything — study hall, café, event space — and did none of them well. I spent weeks observing how people actually used the space, then designed two alternatives validated with a physical scale model.",
     meta: [
-      { label: "Site", value: "Tufts SEC atrium" },
-      { label: "Model", value: "1:30 laser-cut plywood" },
-      { label: "Method", value: "SCAMPER + Pahl et al. iterative design" },
-      { label: "Stakeholders", value: "Students, faculty, staff, event personnel, community" }
+      { label: "Challenge", value: "Multi-use space failing its primary users" },
+      { label: "Research", value: "Weeks of observation, stakeholder interviews" },
+      { label: "Validation", value: "1:30 laser-cut plywood model" },
+      { label: "Stakeholders", value: "Students, faculty, staff, event personnel" }
     ],
     sections: [
       {
-        h: "Problem",
-        p: "The SEC atrium, Tufts' main science and engineering entry, is heavily used for independent study yet also functions as a meeting place, casual eatery, and occasional event venue. The re-design optimizes for the primary use (study) without compromising the secondary uses."
+        h: "What I observed",
+        p: "The SEC atrium is Tufts' main science and engineering entry point. After weeks of observation, a clear pattern emerged: the space was overwhelmingly used for independent study, but it was also expected to function as a meeting place, casual eatery, and event venue. These competing demands left no use case well-served — and the single biggest pain point was a lack of power outlets."
       },
       {
-        h: "Process",
-        p: "Stakeholder identification mapped the range of users and their often conflicting priorities. I observed usage patterns over several weeks, interviewed a Milton High math department head then going through her own school's architectural re-design, and iterated through SCAMPER prompts to unblock creative fixation on an early monotile-based concept."
+        h: "Research process",
+        p: "I mapped stakeholder groups and their conflicting priorities, conducted interviews (including with a school administrator navigating a parallel architectural redesign), and used SCAMPER prompts to push past an early concept I'd gotten fixated on."
       },
       {
-        h: "Two designs, modeled",
-        p: "Design 1 features modular, swingable stair-seating tables that retract into the wall fixture for open-plan events; Design 2 uses continuous bench seating in a T-arrangement for semi-private work with the flexibility to host events. Both integrate additional power outlets, which my observation identified as the most pressing gap."
+        h: "Two solutions, one core insight",
+        p: "Both designs prioritize the primary use (study) while preserving flexibility for events. Design 1: modular stair-seating tables that retract for open-plan events. Design 2: continuous T-shaped bench seating for semi-private work. Both integrate the power outlets that observation flagged as the most urgent gap. I built both at 1:30 scale in laser-cut plywood to evaluate spatial tradeoffs."
       }
     ],
     gallery: [
@@ -340,23 +348,23 @@ const PROJECTS = {
   },
 
   "eazydaize": {
-    tag: "Industrial Design ENP-165 · Final Project",
+    tag: "Industrial Design · Physical Prototyping",
     title: "Eazy Daize",
-    lede: "A full industrial design process, from user research and form exploration to physical prototype. The final project for Tufts' ENP-165 Industrial Design course.",
+    lede: "An end-to-end industrial design project where I let user research — not aesthetics — drive every decision, from form exploration to physical prototype.",
     meta: [
-      { label: "Course", value: "ENP-165 Industrial Design" },
-      { label: "Type", value: "Product redesign" },
+      { label: "Scope", value: "Full design arc: research → prototype" },
       { label: "Research", value: "User interview, in-store observation" },
-      { label: "Deliverables", value: "Research deck, concepts, prototype" }
+      { label: "Key themes", value: "Process gratification, maintenance, temperature" },
+      { label: "Deliverables", value: "Research deck, concepts, physical prototype" }
     ],
     sections: [
       {
-        h: "Research",
-        p: "Primary research included a detailed user interview and an in-store observation visit to characterize the existing product category, user needs, and usage ritual. Three recurring themes emerged: process gratification, maintenance ease (cleaning), and temperature control (material choice, combustion)."
+        h: "Starting with the user, not the form",
+        p: "I conducted a detailed user interview and an in-store observation visit to understand the existing product category and the rituals around it. Three themes kept surfacing: process gratification (the experience of use matters as much as the result), maintenance ease, and temperature control. These became the design criteria — not a mood board."
       },
       {
-        h: "Process",
-        p: "The project follows the full industrial design arc: problem framing, user research, competitive and contextual inquiry, ideation, prototyping, and reflection. The focus throughout is on the lived usage pattern of the product rather than its aesthetics alone."
+        h: "From research to prototype",
+        p: "The full arc — problem framing, competitive analysis, ideation, and prototyping — was anchored to those three research themes at every stage. When a concept looked good but didn't address a real user need, I cut it. The final prototype is a physical object shaped entirely by how people actually use products like this, not by how they look on a shelf."
       }
     ],
     gallery: [
