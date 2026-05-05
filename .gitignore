@@ -1,1 +1,4 @@
 *.DS_Store*
+
+# Private reference materials (CVs, applications, etc.) - never push to GitHub
+assets/documents/reference material/
